@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=he, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" class="css">
+    <title>Weather Forcasting</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="mainContainer">
+
+        <div class="serchContainer">
+            <label for="search"> Type The City Name
+                <input type="text"
+                name="city"
+                value="<?= $block->escapeHtmlAttr($block->getAddress()->getCity()) ?>"
+                title="<?= $block->escapeHtmlAttr(__('City')) ?>"
+                class="input-text <?= $block->escapeHtmlAttr($this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('city')) ?>"
+                id="city" data-validate="{'required':true,'minlength':4,'maxlength':50 }">
+     
+            </label>
+        </div>
+
+        <div class="results">
+
+            <div class="card">
+                <h2 class="day">day 1</h2>
+                <p class="temprature"> 7 d</p>
+                <div class="icon">
+                    <img class="icon_img" src="" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="day">day 2</h2>
+                <p class="temprature"> 7 d</p>
+                <div class="icon">
+                    <img class="icon_img" src="" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="day">day 3</h2>
+                <p class="temprature"> 7 d</p>
+                <div class="icon">
+                    <img class="icon_img" src="" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="day">day 4</h2>
+                <p class="temprature"> 7 d</p>
+                <div class="icon">
+                    <img class="icon_img" src="" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="day">day 5</h2>
+                <p class="temprature"> 7 d</p>
+                <div class="icon">
+                    <img class="icon_img" src="" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.mainContainer{
+    padding: 10%;
+    margin: 15px;
+    background-color: aqua;
+
+}
+
+.results{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border: black 1px solid;
+    padding: 10px;
+    margin: 5px;
+}
