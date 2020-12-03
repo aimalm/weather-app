@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=he, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" class="css">
-    <title>Weather Forcasting</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <title>Weather Forecasting</title>
 </head>
 <body>
     <header>
@@ -12,62 +17,46 @@
     </header>
     <div class="mainContainer">
 
-        <div class="serchContainer">
-            <label for="search"> Type The City Name
-                <input type="text"
-                name="city"
-                value="<?= $block->escapeHtmlAttr($block->getAddress()->getCity()) ?>"
-                title="<?= $block->escapeHtmlAttr(__('City')) ?>"
-                class="input-text <?= $block->escapeHtmlAttr($this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('city')) ?>"
-                id="city" data-validate="{'required':true,'minlength':4,'maxlength':50 }">
-     
-            </label>
+        <div class="container">
+            <br/>
+            <div class="row justify-content-center">
+                                <div class="col-12 col-md-10 col-lg-8">
+                                    <form class="card card-sm">
+                                        <div class="card-body row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <i class="fas fa-search h4 text-body"></i>
+                                            </div>
+                                            <!--end of col-->
+                                            <div class="col">
+                                                <input id="search_id" class="form-control form-control-lg form-control-borderless" type="search" placeholder="City Name">
+                                            </div>
+                                            <!--end of col-->
+                                            <div class="col-auto">
+                                                <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                            </div>
+                                            <!--end of col-->
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--end of col-->
+                            </div>
         </div>
 
-        <div class="results">
-
-            <div class="card">
-                <h2 class="day">day 1</h2>
-                <p class="temprature"> 7 d</p>
-                <div class="icon">
-                    <img class="icon_img" src="" alt="">
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="day">day 2</h2>
-                <p class="temprature"> 7 d</p>
-                <div class="icon">
-                    <img class="icon_img" src="" alt="">
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="day">day 3</h2>
-                <p class="temprature"> 7 d</p>
-                <div class="icon">
-                    <img class="icon_img" src="" alt="">
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="day">day 4</h2>
-                <p class="temprature"> 7 d</p>
-                <div class="icon">
-                    <img class="icon_img" src="" alt="">
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="day">day 5</h2>
-                <p class="temprature"> 7 d</p>
-                <div class="icon">
-                    <img class="icon_img" src="" alt="">
-                </div>
-            </div>
-
-        </div>
+        <div class="results"> </div>
     </div>
-    <script src="app.js"></script>
+
+    <script>
+        function activatePlacesSearch(){
+            var input = document.getElementById("search_id");
+            var autocomplete = new google.maps.places.autocomplete(input);
+        }
+    </script>
+    
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRpZnZGpOUyWUV0roRXkIgbEu5Y3NeLwg&libraries=places,geometry&callback=activatePlacesSearch" async defer></script>
+
+
+<script src="app.js"></script>
+
 </body>
 </html>
